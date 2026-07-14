@@ -1,0 +1,35 @@
+DATA SOURCE ISSUES
+------------------
+BEL
+HAL
+TCS
+
+Reason:
+Source ROE values appear incorrect or inconsistent with computed values. Likely due to data extraction, scaling, or source-data quality issues.
+
+VERSION DIFFERENCES
+-------------------
+ADANIENT
+ADANIPOWER
+BPCL
+COALINDIA
+IRCTC
+LICI
+NESTLEIND
+PFC
+TATAMOTORS
+TRENT
+
+Reason:
+Differences likely arise from TTM vs annual reporting periods, updated filings, or version mismatches between source and computed datasets.
+
+FORMULA DISCREPANCIES
+---------------------
+BAJAJFINSV
+LT
+PNB
+GODREJCP
+TATASTEEL
+
+Reason:
+Differences may be caused by alternate ROE methodologies such as average equity vs closing equity, standalone vs consolidated statements, or reserve treatment.
