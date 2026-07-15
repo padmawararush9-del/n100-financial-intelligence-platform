@@ -1,0 +1,7 @@
+Sprint 2 focused on building the financial analytics engine for the N100 Financial Intelligence Platform.
+
+Implemented profitability ratios (NPM, OPM, ROE, ROCE, ROA), leverage and efficiency ratios (D/E, ICR, Asset Turnover), CAGR growth metrics, cash flow KPIs, and capital allocation analysis.
+
+Key decisions included handling zero denominators with None values, suppressing leverage warnings for Financials companies, and using computed ratio-engine values as the source of truth while retaining source values for display purposes.
+
+Major edge cases addressed included turnaround scenarios, decline-to-loss situations, debt-free companies, zero-base CAGR calculations, and source-data anomalies identified through validation checks.
