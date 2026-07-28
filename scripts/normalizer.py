@@ -7,21 +7,19 @@ import pandas as pd
 
 
 def normalize_year(year):
-    """
-    Convert year values to YYYY format.
-
-    Examples:
-    Dec 2012 -> 2012
-    Mar 2014 -> 2014
-    """
-
     if pd.isna(year):
         return None
 
-    year = str(year)
+    year = str(year).strip()
+
+    if year.startswith("-"):
+        return None
 
     if len(year) >= 4:
-        return int(year[-4:])
+        try:
+            return int(year[-4:])
+        except ValueError:
+            return None
 
     return None
 
