@@ -78,19 +78,19 @@ def get_company(ticker: str):
         raise HTTPException(status_code=404, detail="Company not found")
 
     ratios = conn.execute(
-        """
-        SELECT *
-        FROM financial_ratios fr
-        WHERE fr.company_id = ?
-        ORDER BY CAST(fr.year AS INTEGER) DESC
-        LIMIT 1
-        """,
-        (ticker.upper(),),
-    ).fetchone()
+    """
+    SELECT *
+    FROM financial_ratios
+    WHERE company_id = ?
+    AND year != 'TTM'
+    ORDER BY SUBSTR(year, -4) DESC
+    """,
+    (ticker.upper(),),
+).fetchall()
 
     conn.close()
 
     return {
-        "company": dict(company),
-        "latest_ratios": dict(ratios) if ratios else None,
-    }
+    "company": dict(company),
+    "ratios": [dict(r) for r in ratios],
+}

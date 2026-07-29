@@ -8,7 +8,10 @@ def load_config(config_path):
         return yaml.safe_load(file)
 
 
-def apply_filters(df, config):
+def apply_filters(df, config=None):
+
+    if config is None:
+        config = {}
 
     filtered = df.copy()
 
@@ -125,7 +128,7 @@ def apply_filters(df, config):
 
     def apply_filters(df):
 
-    filtered = df[
+        filtered = df[
         (df["return_on_equity_pct"] > 15)
         &
         (
